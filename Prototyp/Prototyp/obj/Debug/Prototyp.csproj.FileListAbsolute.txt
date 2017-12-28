@@ -92,8 +92,7 @@ C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\bin\de\System.We
 C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\bin\de\System.Web.WebPages.resources.dll
 C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\bin\de\System.Web.WebPages.Deployment.resources.dll
 C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\bin\de\System.Web.WebPages.Razor.resources.dll
-C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\obj\Debug\Prototyp.csprojResolveAssemblyReference.cache
 C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\obj\Debug\Prototyp.csproj.CoreCompileInputs.cache
 C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\obj\Debug\Prototyp.dll
 C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\obj\Debug\Prototyp.pdb
-C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\bin\Content\Logo_Original.jpg
+C:\Users\ART\Source\Repos\IT-Project-Prototyp\Prototyp\Prototyp\obj\Debug\Prototyp.csprojResolveAssemblyReference.cache

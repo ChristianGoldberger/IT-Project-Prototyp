@@ -2,11 +2,12 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Web;
 using System.Xml.Serialization;
 
 namespace Helper {
     class QuestionProvider : IQuestionProvider {
-        static string Q_PATH = @"~\Content\Questions.xml";
+        static string Q_PATH = "~/Content/Questions.xml";
 
         static QuestionProvider provider = null;
 
@@ -40,19 +41,39 @@ namespace Helper {
             return questions;
         }
 
+        public void DeleteFileFromFolder(string StrFilename)
+        {
+            string strPhysicalFolder = HttpContext.Current.Server.MapPath("..\\");
+            string strFileFullPath = strPhysicalFolder + StrFilename;
+            if (File.Exists(strFileFullPath))
+            {
+                File.Delete(strFileFullPath);
+            }
+        }
+
+        public void WriteFileFromFolder(string StrFilename, List<Question> questions)
+        {
+            string strPhysicalFolder = HttpContext.Current.Server.MapPath("..\\");
+            string strFileFullPath = strPhysicalFolder + StrFilename;
+            if (File.Exists(strFileFullPath))
+            {
+                File.WriteAllText(strFileFullPath, ToXML(questions));
+            }
+        }
+
         public void Add(Question quesion) {
             questions.Add(quesion);
 
-            File.Delete(Q_PATH);
-            File.WriteAllText(Q_PATH, ToXML(questions));
+            DeleteFileFromFolder(Q_PATH);
+            WriteFileFromFolder(Q_PATH, questions);
         }
 
         public void Save(Question quesion) {
             questions.Remove(questions.FirstOrDefault(d => d.Key == quesion.Key));
             questions.Add(quesion);
 
-            File.Delete(Q_PATH);
-            File.WriteAllText(Q_PATH, ToXML(questions));
+            DeleteFileFromFolder(Q_PATH);
+            WriteFileFromFolder(Q_PATH, questions);
         }
 
         private static string ToXML(List<Question> decisions) {

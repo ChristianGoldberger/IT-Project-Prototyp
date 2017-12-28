@@ -163,9 +163,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <EmbeddedResource Include="Content\Logo_Original.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Logo_Original.jpg" />
     <Content Include="Content\Decisions.xml" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -206,6 +204,7 @@
     <Content Include="Views\Question\Index.cshtml" />
     <Content Include="Views\Decision\New.cshtml" />
     <Content Include="Views\Decision\Show.cshtml" />
+    <Content Include="Views\Question\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

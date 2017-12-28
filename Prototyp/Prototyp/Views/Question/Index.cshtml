@@ -1,15 +1,32 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Questions";
 }
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting startdsadasded</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        </p>
-        <br />
-        <br />
-        <img src="~/Content/Logo_Original.jpg" alt="Logo von TD Trusted Decisions GmbH">
-    </div>
-</div>
+<h2>Questions</h2>
+<br />
+<a href="@Url.Action("Edit", new { controller = "Question"})">New question</a>
+<br />
+<br />
+<table id="tschemata" class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var q in ViewBag.Questions)
+        {
+        <tr>
+            <td>
+                @q.Text
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { controller = "Question", id = q.Key })">Edit</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<br />
+<img src="~/Content/Logo_Original.jpg" alt="Logo von TD Trusted Decisions GmbH">

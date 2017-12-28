@@ -7,5 +7,7 @@
         public double Weight { get; set; }
 
         public IntuitionEffect Effect { get; set; }
+
+        public Question() { }
     }
 }
