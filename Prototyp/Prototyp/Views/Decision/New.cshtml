@@ -1,0 +1,16 @@
+﻿@model PagedList.IPagedList<Helper.QuestionAnswer>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Enter new decision";
+}
+
+<h2>@ViewBag.myQ.QuestionKey</h2>
+<br />
+<!-- Radio buttons platzieren etc.. -->
+<br />
+
+Question @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, q => Url.Action("New", new { q }))

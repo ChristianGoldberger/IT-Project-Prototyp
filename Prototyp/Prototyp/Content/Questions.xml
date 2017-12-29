@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfQuestion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Question>
+    <Key>BiasedInfo</Key>
+    <Text>Könnten die Informationen unausgewogen/tendenziös sein?</Text>
+    <Weight>9</Weight>
+    <Effect>Neutral</Effect>
+  </Question>
+  <Question>
+    <Key>CostMoreInfo</Key>
+    <Text>Gibt es rechtliche Einschränkungen bei der Entscheidungsfindung?</Text>
+    <Weight>1</Weight>
+    <Effect>Negative</Effect>
+  </Question>
+  <Question>
+    <Key>DefaultOption</Key>
+    <Text>Ist eine Standardoption verfügbar?</Text>
+    <Weight>1</Weight>
+    <Effect>Negative</Effect>
+  </Question>
+  <Question>
+    <Key>Emotional</Key>
+    <Text>Ist die Entscheidung mit Emotionen behaftet?</Text>
+    <Weight>1</Weight>
+    <Effect>Positive</Effect>
+  </Question>
+  <Question>
+    <Key>Time</Key>
+    <Text>Muss die Entscheidung schnell getroffen werden?</Text>
+    <Weight>1</Weight>
+    <Effect>Negative</Effect>
+  </Question>
+  <Question>
+    <Key>CostMoreInfo2</Key>
+    <Text>Wird erwartet, dass zusätzliche Informationen wenig Mehrwert liefern?</Text>
+    <Weight>1</Weight>
+    <Effect>Negative</Effect>
+  </Question>
+  <Question>
+    <Key>Risks</Key>
+    <Text>ggggggggggggg</Text>
+    <Weight>0</Weight>
+    <Effect>Positive</Effect>
+  </Question>
+  <Question>
+    <Key>PastDecisions</Key>
+    <Text>War das Bauchgefühl bereits bei ähnlichen Entscheidungen erfolgreich?</Text>
+    <Weight>1</Weight>
+    <Effect>Neutral</Effect>
+  </Question>
+  <Question>
+    <Key>AllInforrmation</Key>
+    <Text>Sind alle benötigten Informationen zur Entscheidungsfindung verfügbar?</Text>
+    <Weight>1</Weight>
+    <Effect>Negative</Effect>
+  </Question>
+  <Question>
+    <Key>AllInforrmationProcessed</Key>
+    <Text>Können auch alle Informationen berücksichtigt werden?</Text>
+    <Weight>1</Weight>
+    <Effect>Negative</Effect>
+  </Question>
+  <Question>
+    <Key>dfdfdf</Key>
+    <Text>vbv</Text>
+    <Weight>100</Weight>
+    <Effect>Positive</Effect>
+  </Question>
+  <Question>
+    <Key>gfgfgfgf</Key>
+    <Text>fdfgdsfgsadf</Text>
+    <Weight>0</Weight>
+    <Effect>Positive</Effect>
+  </Question>
+</ArrayOfQuestion>
