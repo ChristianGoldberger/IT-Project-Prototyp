@@ -2,7 +2,7 @@
 
 namespace Helper {
     interface IQuestionProvider {
-        void Add(Question quesion);
+        //void Add(Question quesion); obsolet
         List<Question> GetQuestions();
         void Save(Question quesion);
     }

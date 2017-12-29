@@ -23,7 +23,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Enter new decision", "New", "Decision")</li>
+                    <li>@Html.ActionLink("Enter new decision", "Index", "Decision")</li>
                     <li>@Html.ActionLink("Show decisions", "Show", "Decision")</li>
                     <li>@Html.ActionLink("Manage questions", "Index", "Question")</li>
                 </ul>
@@ -33,6 +33,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <img src="~/Content/Logo_Original.jpg" alt="Logo von TD Trusted Decisions GmbH" style="width: 50%; height: 50%">
         <footer>
             <p>&copy; @DateTime.Now.Year - Philipp Artmayr, Christian Goldberger, Ernst Grabner, Patrick Schmutz, Lukas Wagner</p>
         </footer>

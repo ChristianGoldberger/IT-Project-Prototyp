@@ -1,15 +1,16 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model PagedList.IPagedList<Helper.QuestionAnswer>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Enter new decision";
 }
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting startdsadasded</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        </p>
-        <br />
-        <br />
-        <img src="~/Content/Logo_Original.jpg" alt="Logo von TD Trusted Decisions GmbH">
-    </div>
-</div>
+<h2>@ViewBag.myQ.QuestionKey</h2>
+<br />
+<!-- Radio buttons platzieren etc.. -->
+<br />
+
+Question @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, q => Url.Action("New", new { q }))

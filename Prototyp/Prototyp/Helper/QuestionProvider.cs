@@ -2,96 +2,113 @@
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web;
+using System.Web.Hosting;
 using System.Xml.Serialization;
 
-namespace Helper {
-    class QuestionProvider : IQuestionProvider {
-        static string Q_PATH = "~/Content/Questions.xml";
+namespace Helper
+{
+    class QuestionProvider : IQuestionProvider
+    {
+        static string Q_PATH = HostingEnvironment.MapPath(@"~/Content/Questions.xml");
 
         static QuestionProvider provider = null;
 
         List<Question> questions;
 
-        private QuestionProvider() {
+        private QuestionProvider()
+        {
             questions = new List<Question>();
 
-            if (File.Exists(Q_PATH)) {
-                try {
+            if (File.Exists(Q_PATH))
+            {
+                try
+                {
                     questions = FromXML(File.ReadAllText(Q_PATH));
                 }
-                catch {
+                catch
+                {
                     questions = GetDefaultQuestions();
                 }
             }
-            else {
+            else
+            {
                 questions = GetDefaultQuestions();
             }
         }
 
-        public static QuestionProvider GetQuestionProvider() {
-            if (provider == null) {
+        public static QuestionProvider GetQuestionProvider()
+        {
+            if (provider == null)
+            {
                 provider = new QuestionProvider();
             }
 
             return provider;
         }
 
-        public List<Question> GetQuestions() {
+        public List<Question> GetQuestions()
+        {
             return questions;
         }
 
-        public void DeleteFileFromFolder(string StrFilename)
+        /*
+         * Obsolet
+         * 
+        public void Add(Question quesion)
         {
-            string strPhysicalFolder = HttpContext.Current.Server.MapPath("..\\");
-            string strFileFullPath = strPhysicalFolder + StrFilename;
-            if (File.Exists(strFileFullPath))
+            questions.Add(quesion);
+
+            if (File.Exists(Q_PATH))
             {
-                File.Delete(strFileFullPath);
+                File.Delete(Q_PATH);
+                File.WriteAllText(Q_PATH, ToXML(questions));
+            }
+        }
+        */
+
+        public void Save(Question quesion)
+        {
+            //questions.Remove(questions.FirstOrDefault(d => d.Key == quesion.Key));
+            //questions.Add(quesion);
+            Question oldQ = questions.FirstOrDefault(d => d.Key == quesion.Key);
+            int index = questions.IndexOf(oldQ);
+            if (index != -1)
+            {
+                questions[index] = quesion;
+            }
+            else
+            {
+                questions.Add(quesion);
+            }
+
+            if (File.Exists(Q_PATH))
+            {
+                File.Delete(Q_PATH);
+                File.WriteAllText(Q_PATH, ToXML(questions));
             }
         }
 
-        public void WriteFileFromFolder(string StrFilename, List<Question> questions)
+        private static string ToXML(List<Question> decisions)
         {
-            string strPhysicalFolder = HttpContext.Current.Server.MapPath("..\\");
-            string strFileFullPath = strPhysicalFolder + StrFilename;
-            if (File.Exists(strFileFullPath))
+            using (StringWriter stringWriter = new StringWriter(new StringBuilder()))
             {
-                File.WriteAllText(strFileFullPath, ToXML(questions));
-            }
-        }
-
-        public void Add(Question quesion) {
-            questions.Add(quesion);
-
-            DeleteFileFromFolder(Q_PATH);
-            WriteFileFromFolder(Q_PATH, questions);
-        }
-
-        public void Save(Question quesion) {
-            questions.Remove(questions.FirstOrDefault(d => d.Key == quesion.Key));
-            questions.Add(quesion);
-
-            DeleteFileFromFolder(Q_PATH);
-            WriteFileFromFolder(Q_PATH, questions);
-        }
-
-        private static string ToXML(List<Question> decisions) {
-            using (StringWriter stringWriter = new StringWriter(new StringBuilder())) {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Question>));
                 xmlSerializer.Serialize(stringWriter, decisions);
                 return stringWriter.ToString();
             }
         }
 
-        private static List<Question> FromXML(string xml) {
-            using (StringReader stringReader = new StringReader(xml)) {
+        private static List<Question> FromXML(string xml)
+        {
+            using (StringReader stringReader = new StringReader(xml))
+            {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Question>));
                 return (List<Question>)serializer.Deserialize(stringReader);
             }
         }
 
-        private static List<Question> GetDefaultQuestions() {
+        private static List<Question> GetDefaultQuestions()
+        {
             return new List<Question>() {
                 new Question() {
                     Key = "Risks",
@@ -142,7 +159,7 @@ namespace Helper {
                     Weight = 1
                 },
                 new Question() {
-                    Key = "CostMoreInfo",
+                    Key = "CostMoreInfo2",
                     Text = "Gibt es rechtliche Einschränkungen bei der Entscheidungsfindung?",
                     Effect = IntuitionEffect.Negative,
                     Weight = 1

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Web.Hosting;
 using System.Xml.Serialization;
 
 namespace Helper {
     class DecisionProvider : IDecisionProvider {
-        static string D_PATH = @"~\Content\Decisions.xml";
+        static string D_PATH = HostingEnvironment.MapPath(@"~/Content/Decisions.xml");
 
         static DecisionProvider provider = null;
 
