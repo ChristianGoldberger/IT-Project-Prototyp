@@ -4,40 +4,44 @@
 	ViewBag.Title = "Enter new decision";
 }
 
+<form class="form-horizontal">
+	<fieldset style="margin-top: 10px">
+		<legend>Neue Entscheidung erstellen</legend>
+		<div class="form-group" style="margin-left:0px;margin-right:0px">
+			<div class="row">
+				<div class="col-sm-2 col-lg-2">
+					<label for="title" class="control-label">Titel</label>
+				</div>
+				<div class="col-sm-10 col-lg-10">
+					<input tpye="text" class="form-control" id="title" />
+				</div>
+			</div>
+		</div>
+		<div class="form-group" style="margin-left:0px;margin-right:0px">
+			<div class="row">
+				<div class="col-sm-2 col-lg-2">
+					<label for="description" class="control-label">Beschreibung</label>
+				</div>
+				<div class="col-sm-10 col-lg-10">
+					<textarea class="form-control" rows="3" id="description"> </textarea>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-5 col-lg-5">
+				<input id="btnSave" type="submit" value="Speichern" class="btn btn-primary" />
+			</div>
+		</div>
+	</fieldset>
+</form>
+
+
 
 @using (Html.BeginForm())
 {
 	@Html.AntiForgeryToken()
 
-	<form class="form-horizontal">
-		<fieldset style="margin-top: 10px">
-			<legend>Neue Entscheidung erstellen</legend>
-			<div class="row">
-				<div class="col-sm-2 col-lg-2">
-					<label for="title" class="control-label">Titel der Entscheidung</label>
-				</div>
-				<div class="col-sm-10 col-lg-10">
-					@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Title)
-				</div>
-			</div>
-			<div class="row" style="margin-top: 5px">
-				<div class="col-sm-2 col-lg-2">
-					<label for="description" class="control-label">Beschreibung</label>
-				</div>
-				<div class="col-sm-10 col-lg-10">
-					@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Description)
-				</div>
-			</div>
-			<div class="row">
-				
-				<div class="col-sm-5 col-lg-5">
-					<input type="submit" value="Speichern" class="btn btn-primary" />
-				</div>
-			</div>
-		</fieldset>
-	</form>
 
 
 	<div class="form-horizontal">
