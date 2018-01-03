@@ -16,7 +16,6 @@ namespace Prototyp.Controllers
 
             return View();
         }
-        
         public ActionResult Edit(string id)
         {
             if (id == null)
