@@ -1,7 +1,7 @@
 ﻿namespace Helper {
     public enum IntuitionEffect {
-        Positive = 0,
-        Negative = 1,
+        Positiv = 0,
+        Negativ = 1,
         Neutral = 2
     }
 }
