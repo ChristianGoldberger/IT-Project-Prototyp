@@ -9,10 +9,10 @@ namespace Helper {
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Bitte fügen Sie eine Titel ein!")]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Bitte fügen Sie eine Beschreibung ein!")]
         public string Description { get; set; }
 
         public int? ActualPerformance { get; set; }

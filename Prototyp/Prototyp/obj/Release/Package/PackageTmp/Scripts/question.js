@@ -1,10 +1,4 @@
-﻿$(document).ready(function ()
-{
-	$("#btnEdit").click(edit);
-	//$("#btnDelete").click(deleteDecision);
+﻿$(document).ready(function () {
+	$("#btnBack").click(function () { window.location.href = "/Question/Index"; });
 });
-$('tr').click(function (e)
-{
-	var txt = $(e.target).attr('id');
-	console.log(txt);
-});
+

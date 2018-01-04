@@ -26,7 +26,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>12/29/2017 19:36:45</publishTime>
     </File>
     <File Include="bin/Content/Questions.xml">
-      <publishTime>12/29/2017 19:36:45</publishTime>
+      <publishTime>01/04/2018 11:50:45</publishTime>
     </File>
     <File Include="bin/de/System.Web.Helpers.resources.dll">
       <publishTime>01/28/2015 04:04:34</publishTime>
@@ -86,10 +86,10 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>12/29/2017 19:36:45</publishTime>
     </File>
     <File Include="bin/Prototyp.dll">
-      <publishTime>01/03/2018 16:11:21</publishTime>
+      <publishTime>01/04/2018 11:52:44</publishTime>
     </File>
     <File Include="bin/Prototyp.pdb">
-      <publishTime>01/03/2018 16:11:21</publishTime>
+      <publishTime>01/04/2018 11:52:44</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>04/13/2017 16:47:48</publishTime>
@@ -319,6 +319,9 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
     <File Include="Scripts/bootstrap.min.js">
       <publishTime>01/02/2018 16:22:49</publishTime>
     </File>
+    <File Include="Scripts/editQuestion.js">
+      <publishTime>01/04/2018 11:38:40</publishTime>
+    </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>12/27/2017 12:47:48</publishTime>
     </File>
@@ -344,10 +347,10 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>12/27/2017 12:47:52</publishTime>
     </File>
     <File Include="Scripts/newDecision.js">
-      <publishTime>01/03/2018 14:07:11</publishTime>
+      <publishTime>01/04/2018 10:38:28</publishTime>
     </File>
     <File Include="Scripts/question.js">
-      <publishTime>01/03/2018 15:21:39</publishTime>
+      <publishTime>01/04/2018 09:55:00</publishTime>
     </File>
     <File Include="Scripts/respond.js">
       <publishTime>12/27/2017 12:47:53</publishTime>
@@ -356,7 +359,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>12/27/2017 12:47:52</publishTime>
     </File>
     <File Include="Views/Decision/Index.cshtml">
-      <publishTime>01/03/2018 14:24:36</publishTime>
+      <publishTime>01/04/2018 11:35:28</publishTime>
     </File>
     <File Include="Views/Decision/New.cshtml">
       <publishTime>12/29/2017 19:36:45</publishTime>
@@ -374,10 +377,10 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>01/02/2018 16:44:35</publishTime>
     </File>
     <File Include="Views/Question/Edit.cshtml">
-      <publishTime>12/29/2017 19:36:45</publishTime>
+      <publishTime>01/04/2018 11:46:04</publishTime>
     </File>
     <File Include="Views/Question/Index.cshtml">
-      <publishTime>01/03/2018 15:46:00</publishTime>
+      <publishTime>01/04/2018 10:06:11</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>12/27/2017 12:47:37</publishTime>
