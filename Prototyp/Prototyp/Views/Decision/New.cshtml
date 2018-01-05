@@ -9,6 +9,30 @@
 <h2>@ViewBag.myQ.QuestionKey</h2>
 <br />
 <!-- Radio buttons platzieren etc.. -->
+<form>
+
+    <fieldset>
+        <input type="radio" id="decision1" name="Entscheidung" value="Radio1">
+        <label for="Radio1"> 1</label>
+        <input type="radio" id="decision2" name="Entscheidung" value="Radio2">
+        <label for="Radio2"> 2</label>
+        <input type="radio" id="decision3" name="Entscheidung" value="Radio3">
+        <label for="Radio3">3</label>
+        <input type="radio" id="decision4" name="Entscheidung" value="Radio4">
+        <label for="Radio4">4</label>
+        <input type="radio" id="decision5" name="Entscheidung" value="Radio5">
+        <label for="Radio5">5</label>
+        <input type="radio" id="decision6" name="Entscheidung" value="Radio6">
+        <label for="Radio">6</label>
+
+    </fieldset>
+</form>
+
+<div class="col-sm-5 col-lg-5">
+    <input type="submit" value="Speichern" class="btn btn-primary" />
+    <button id="btnBack" class="btn btn-primary">Zurück</button>
+</div>
+</div>
 <br />
 
 Question @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount

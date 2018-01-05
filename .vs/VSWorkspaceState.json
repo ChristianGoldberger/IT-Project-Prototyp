@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\obj\\x86",
     "\\Prototyp",
     "\\Prototyp\\Prototyp"
   ],
-  "SelectedNode": "\\Prototyp\\Prototyp.sln",
+  "SelectedNode": "\\obj",
   "PreviewInSolutionExplorer": false
 }
