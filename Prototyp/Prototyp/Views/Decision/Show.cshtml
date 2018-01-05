@@ -14,8 +14,8 @@
                         @q.DecisionEntered
                     </td>
                     <td>
-                        <a class="btn btn-primary" style="float:right;margin-left:5px; margin-bottom:2px; height:40px;width:80px" href="@Url.Action("Edit", new { controller = "Question", id = q.Key })">Ändern</a>
-                        <a class="btn btn-danger" style="float:right;height:40px;width:80px" href="@Url.Action("Delete", new { controller = "Question", id = q.Key })">Löschen</a>
+                        <a class="btn btn-primary" style="float:right;margin-left:5px; margin-bottom:2px; height:40px;width:80px" href="@Url.Action("Edit", new { controller = "Decision", id = q.Key })">Ändern</a>
+                        <a class="btn btn-danger" style="float:right;height:40px;width:80px" href="@Url.Action("Delete", new { controller = "Decision", id = q.Key })">Löschen</a>
                     </td>
                 </tr>
             }
