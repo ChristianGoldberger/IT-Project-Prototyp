@@ -102,6 +102,8 @@ namespace Prototyp.Controllers
 
 		public ActionResult Show()
 		{
+            // Decisions dec = dasdsadasd
+            //ViewBag.Decisions = dec;
 			return View();
 		}
 	}
