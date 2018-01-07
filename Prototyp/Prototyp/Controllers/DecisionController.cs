@@ -102,8 +102,9 @@ namespace Prototyp.Controllers
 
 		public ActionResult Show()
 		{
-            // Decisions dec = dasdsadasd
-            //ViewBag.Decisions = dec;
+             //Decision dec = DecisionProvider.GetDecisionProvider().GetAll();
+             ViewBag.Decisions = DecisionProvider.GetDecisionProvider().GetAll();
+
 			return View();
 		}
 	}
