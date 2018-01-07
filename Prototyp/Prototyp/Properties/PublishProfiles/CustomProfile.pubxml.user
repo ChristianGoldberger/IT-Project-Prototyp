@@ -86,10 +86,10 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>12/29/2017 19:36:45</publishTime>
     </File>
     <File Include="bin/Prototyp.dll">
-      <publishTime>01/04/2018 11:52:44</publishTime>
+      <publishTime>01/04/2018 12:26:17</publishTime>
     </File>
     <File Include="bin/Prototyp.pdb">
-      <publishTime>01/04/2018 11:52:44</publishTime>
+      <publishTime>01/04/2018 12:26:17</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>04/13/2017 16:47:48</publishTime>
@@ -272,7 +272,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>01/02/2018 16:22:49</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>01/02/2018 16:22:49</publishTime>
+      <publishTime>01/04/2018 12:20:23</publishTime>
     </File>
     <File Include="Content/bootstrap.css.map">
       <publishTime>01/02/2018 16:22:49</publishTime>
@@ -284,13 +284,16 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>01/02/2018 16:22:49</publishTime>
     </File>
     <File Include="Content/bootstrapblue.css">
-      <publishTime>01/02/2018 16:29:28</publishTime>
+      <publishTime>01/04/2018 12:21:38</publishTime>
     </File>
     <File Include="Content/PagedList.css">
       <publishTime>12/29/2017 19:36:45</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>12/27/2017 12:47:37</publishTime>
+      <publishTime>01/04/2018 12:20:00</publishTime>
+    </File>
+    <File Include="Content/Validation.css">
+      <publishTime>01/04/2018 12:23:39</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>12/27/2017 12:47:37</publishTime>
@@ -377,7 +380,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>01/02/2018 16:44:35</publishTime>
     </File>
     <File Include="Views/Question/Edit.cshtml">
-      <publishTime>01/04/2018 11:46:04</publishTime>
+      <publishTime>01/04/2018 12:18:55</publishTime>
     </File>
     <File Include="Views/Question/Index.cshtml">
       <publishTime>01/04/2018 10:06:11</publishTime>
