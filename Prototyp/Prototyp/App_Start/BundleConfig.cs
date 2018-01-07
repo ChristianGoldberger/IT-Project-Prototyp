@@ -25,7 +25,8 @@ namespace Prototyp
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrapblue.css",
-					  "~/Content/site.css"));
+					  "~/Content/site.css",
+					  "~/Content/validation.css"));
 		}
 	}
 }

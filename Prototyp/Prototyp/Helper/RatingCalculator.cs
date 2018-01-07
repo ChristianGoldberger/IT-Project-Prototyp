@@ -10,10 +10,10 @@ namespace Helper {
             foreach (var answer in answers) {
                 var question = questions.FirstOrDefault(q => q.Key == answer.QuestionKey);
                 if (question != null) {
-                    if (question.Effect == IntuitionEffect.Positive) {
+                    if (question.Effect == IntuitionEffect.Positiv) {
                         rating += answer.Rating * question.Weight;
                     }
-                    else if (question.Effect == IntuitionEffect.Negative) {
+                    else if (question.Effect == IntuitionEffect.Negativ) {
                         rating += ((7 - (answer.Rating)) * question.Weight);
                     }
                 }

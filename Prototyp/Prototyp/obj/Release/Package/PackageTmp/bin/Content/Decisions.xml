@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfDecision xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Decision>
+    <Id>0</Id>
+    <Title>bfgf</Title>
+    <Description>fgfgfg</Description>
+    <ActualPerformance>1</ActualPerformance>
+    <Answers>
+      <QuestionAnswer>
+        <QuestionKey>Risks</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments>d</Arguments>
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>PastDecisions</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments>d</Arguments>
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>AllInforrmation</QuestionKey>
+        <Rating>6</Rating>
+        <Arguments>d</Arguments>
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>AllInforrmationProcessed</QuestionKey>
+        <Rating>5</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>BiasedInfo</QuestionKey>
+        <Rating>3</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>CostMoreInfo</QuestionKey>
+        <Rating>2</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>DefaultOption</QuestionKey>
+        <Rating>5</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Emotional</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Time</QuestionKey>
+        <Rating>6</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>CostMoreInfo</QuestionKey>
+        <Rating>6</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>_intuition</QuestionKey>
+        <Rating>6</Rating>
+        <Arguments />
+      </QuestionAnswer>
+    </Answers>
+    <DecisionEntered>2017-12-18T17:08:52.1959443+01:00</DecisionEntered>
+  </Decision>
+</ArrayOfDecision>

@@ -113,61 +113,61 @@ namespace Helper
                 new Question() {
                     Key = "Risks",
                     Text = "Wie hoch ist das Risiko?",
-                    Effect = IntuitionEffect.Negative,
+                    Effect = IntuitionEffect.Negativ,
                     Weight = 1
                 },
                 new Question() {
                     Key = "Time",
                     Text = "Muss die Entscheidung schnell getroffen werden?",
-                    Effect = IntuitionEffect.Positive,
+                    Effect = IntuitionEffect.Positiv,
                     Weight = 1
                 },
                 new Question() {
                     Key = "Emotional",
                     Text = "Ist die Entscheidung mit Emotionen behaftet?",
-                    Effect = IntuitionEffect.Positive,
+                    Effect = IntuitionEffect.Positiv,
                     Weight = 1
                 },
                 new Question() {
                     Key = "PastDecisions",
                     Text = "War das Bauchgefühl bereits bei ähnlichen Entscheidungen erfolgreich?",
-                    Effect = IntuitionEffect.Positive,
+                    Effect = IntuitionEffect.Positiv,
                     Weight = 1
                 },
                 new Question() {
                     Key = "AllInforrmation",
                     Text = "Sind alle benötigten Informationen zur Entscheidungsfindung verfügbar?",
-                    Effect = IntuitionEffect.Negative,
+                    Effect = IntuitionEffect.Negativ,
                     Weight = 1
                 },
                 new Question() {
                     Key = "AllInforrmationProcessed",
                     Text = "Können auch alle Informationen berücksichtigt werden?",
-                    Effect = IntuitionEffect.Negative,
+                    Effect = IntuitionEffect.Negativ,
                     Weight = 1
                 },
                 new Question() {
                     Key = "BiasedInfo",
                     Text = "Könnten die Informationen unausgewogen/tendenziös sein?",
-                    Effect = IntuitionEffect.Positive,
+                    Effect = IntuitionEffect.Positiv,
                     Weight = 1
                 },
                 new Question() {
                     Key = "CostMoreInfo",
                     Text = "Wird erwartet, dass zusätzliche Informationen wenig Mehrwert liefern?",
-                    Effect = IntuitionEffect.Positive,
+                    Effect = IntuitionEffect.Positiv,
                     Weight = 1
                 },
                 new Question() {
                     Key = "CostMoreInfo2",
                     Text = "Gibt es rechtliche Einschränkungen bei der Entscheidungsfindung?",
-                    Effect = IntuitionEffect.Negative,
+                    Effect = IntuitionEffect.Negativ,
                     Weight = 1
                 },
                 new Question() {
                     Key = "DefaultOption",
                     Text = "Ist eine Standardoption verfügbar?",
-                    Effect = IntuitionEffect.Negative,
+                    Effect = IntuitionEffect.Negativ,
                     Weight = 1
                 }
             };
