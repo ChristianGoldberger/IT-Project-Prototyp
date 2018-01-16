@@ -3,9 +3,10 @@
     "",
     "\\Prototyp",
     "\\Prototyp\\Prototyp",
-    "\\Prototyp\\Prototyp\\App_Start",
-    "\\Prototyp\\Prototyp\\bin",
-    "\\Prototyp\\Prototyp\\bin\\Content"
+    "\\Prototyp\\Prototyp\\Views",
+    "\\Prototyp\\Prototyp\\Views\\Decision",
+    "\\Prototyp\\Prototyp\\Views\\Question"
   ],
+  "SelectedNode": "\\Prototyp\\Prototyp\\Content",
   "PreviewInSolutionExplorer": false
 }

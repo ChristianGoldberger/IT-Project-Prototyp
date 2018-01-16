@@ -5,6 +5,10 @@ using System.Linq;
 using System.Web;
 using PagedList;
 using System.Web.Mvc;
+using System.Net.Http;
+using System.Net;
+using System.IO;
+using System.Net.Http.Headers;
 
 namespace Prototyp.Controllers
 {
@@ -100,8 +104,20 @@ namespace Prototyp.Controllers
 			return View(qAnswers.ToPagedList(pageNumber, pageSize));
 		}
 
+        public ActionResult DownloadFile()
+        {
+            byte[] fileBytes = System.IO.File.ReadAllBytes(Server.MapPath("~") + "Content/Decisions.xml");
+            string fileName = "Decisions.xml";
+            return base.File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+
+
+
 		public ActionResult Show()
 		{
+            var decisions = DecisionProvider.GetDecisionProvider().GetAll();
+            ViewBag.Decisions = decisions;
+
 			return View();
 		}
 	}
