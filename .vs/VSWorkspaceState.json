@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Prototyp",
-    "\\Prototyp\\Prototyp"
+    "\\Prototyp\\Prototyp",
+    "\\Prototyp\\Prototyp\\App_Start",
+    "\\Prototyp\\Prototyp\\bin",
+    "\\Prototyp\\Prototyp\\bin\\Content"
   ],
-  "SelectedNode": "\\Prototyp\\Prototyp.sln",
   "PreviewInSolutionExplorer": false
 }
