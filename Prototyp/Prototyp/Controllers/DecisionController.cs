@@ -118,8 +118,6 @@ namespace Prototyp.Controllers
             return base.File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
 
-
-
 		public ActionResult Show()
 		{
             var decisions = DecisionProvider.GetDecisionProvider().GetAll();
@@ -127,5 +125,12 @@ namespace Prototyp.Controllers
 
 			return View();
 		}
+
+        public ActionResult Details(int id)
+        {
+            Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
+            ViewBag.Decisions = dec;
+            return View();
+        }
 	}
 }
