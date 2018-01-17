@@ -25,6 +25,7 @@
                     <td>Title</td>
                     <td>Description</td>
                     <td>ActualPerformance</td>
+                    <td>Answers</td>
                     <td>DateTime</td>
                 </tr>
 
@@ -36,8 +37,28 @@
                         <td>@decision.Title</td>
                         <td>@decision.Description</td>
                         <td>@decision.ActualPerformance</td>
+                        <td>
+                            <table class="blueTable">
+
+                                <tr>
+                                    <td>Arguments</td>
+                                    <td>Question Key</td>
+                                    <td>Rating</td>
+                                </tr>
+
+                                @{
+                                foreach (QuestionAnswer answer in decision.Answers)
+                                {
+                                    <tr>
+                                        <td>@answer.Arguments</td>
+                                        <td>@answer.QuestionKey</td>
+                                        <td>@answer.Rating</td>
+                                    </tr>
+                            }
+                                }
+                            </table>
+                        </td>
                         <td>@decision.DecisionEntered</td>
-                        <td><a class="btn btn-primary" style="float:right;margin-left:5px; margin-bottom:2px; height:40px;width:80px" href="@Url.Action("Details", new { controller = "Decision", id = decision.Id })">Details</a></td>
                     </tr>
             }
 
