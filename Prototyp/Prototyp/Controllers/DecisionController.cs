@@ -6,7 +6,7 @@ using System.Web;
 using PagedList;
 using System.Web.Mvc;
 using System.Windows;
-
+using Prototyp.Helper;
 
 namespace Prototyp.Controllers
 {
@@ -139,8 +139,27 @@ namespace Prototyp.Controllers
           
             return View();
         }
-
-        public ActionResult Delete(int id){
+		public ActionResult DownloadFile()
+		{
+			byte[] fileBytes = System.IO.File.ReadAllBytes(Server.MapPath("~") + "Content/Decisions.xml");
+			string fileName = "Decisions.xml";
+			return base.File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+		}
+		public ActionResult Details(int id)
+		{
+			Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
+			List<Answer> answers = new List<Answer>();
+			ViewBag.Questions = QuestionProvider.GetQuestionProvider().GetQuestions();
+			foreach (var s in dec.Answers)
+			{
+				Question q = QuestionProvider.GetQuestionProvider().GetQuestions().Single(x => (x.Key == s.QuestionKey));
+				answers.Add(new Answer { Rating = s.Rating, Text = q.Text, Annotation = s.Arguments });
+			}
+			ViewBag.Decisions = dec;
+			ViewBag.Answers = answers;
+			return View();
+		}
+		public ActionResult Delete(int id){
 
             DecisionProvider.GetDecisionProvider().Delete(id);
             return RedirectToAction("Show");
