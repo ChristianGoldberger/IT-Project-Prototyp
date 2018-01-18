@@ -1,4 +1,4 @@
-﻿using Helper;
+using Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -113,7 +113,7 @@ namespace Prototyp.Controllers
                 DecisionProvider.GetDecisionProvider().Add(decisionToSave);
                 DecisionProvider.GetDecisionProvider().clearRadioValue();
 
-                int i = ViewBag.myQ.Length;
+               
 
                 return RedirectToAction("Show");
             }
@@ -147,18 +147,6 @@ namespace Prototyp.Controllers
 
         }
 
-        public ActionResult Edit(int id){
-
-            Decision decision = DecisionProvider.GetDecisionProvider().GetAll().Single(d => (d.Id == id));
-            if (decision == null)
-            {
-                return HttpNotFound();
-            }
-            return RedirectToAction("New", 1);
-
-        }
-
-  
 
 
     }
