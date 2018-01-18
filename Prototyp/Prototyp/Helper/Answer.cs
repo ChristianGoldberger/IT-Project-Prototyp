@@ -10,7 +10,7 @@ namespace Prototyp.Helper
 	{
 		public int Rating { get; set; }
 
-		public String AnswerText { get; set; }
-		public IntuitionEffect AnswerEffect { get; set; }
+		public String Text { get; set; }
+		public String Annotation { get; set; }
 	}
 }

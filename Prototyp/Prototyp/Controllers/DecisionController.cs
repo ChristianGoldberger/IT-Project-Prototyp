@@ -136,7 +136,7 @@ namespace Prototyp.Controllers
 			foreach (var s in dec.Answers)
 			{
 				Question q = QuestionProvider.GetQuestionProvider().GetQuestions().Single(x => (x.Key == s.QuestionKey));
-				answers.Add(new Answer { Rating = s.Rating, AnswerText = q.Text, AnswerEffect =  q.Effect});
+				answers.Add(new Answer { Rating = s.Rating, Text = q.Text, Annotation =  s.Arguments});
 			}
             ViewBag.Decisions = dec;
 			ViewBag.Answers = answers;
