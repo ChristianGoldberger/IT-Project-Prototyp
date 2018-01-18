@@ -102,15 +102,46 @@ namespace Prototyp.Controllers
 
 		public ActionResult New(int? q)
 		{
+			int pageNumber;
+			int pageSize;
+
+			if (q.HasValue && q > 12)
+			{
+				q = 1;
+
+
+				Decision decisionToSave = DecisionProvider.GetDecisionProvider().getDecisionHelper();
+				decisionToSave.Answers = ViewBag.myQ;
+				decisionToSave.Id = DecisionProvider.GetDecisionProvider().GetId();
+				DecisionProvider.GetDecisionProvider().Add(decisionToSave);
+				DecisionProvider.GetDecisionProvider().clearRadioValue();
+
+
+
+				return RedirectToAction("Show");
+			}
+
 			//Ab hier weiter mit QuestionAnswer arbeiten (enthält Rating und Argumente)
 			qAnswers = (List<QuestionAnswer>)Session["qAnswers"];
 			QuestionAnswer myQ = qAnswers.ElementAt(q - 1 ?? 0);
+			myQ.Rating = 1;
 			ViewBag.myQ = myQ;
 
-			int pageSize = 1;
-			int pageNumber = (q ?? 1);
+
+			pageSize = 1;
+			pageNumber = (q ?? 1);
 
 			return View(qAnswers.ToPagedList(pageNumber, pageSize));
+
+			////Ab hier weiter mit QuestionAnswer arbeiten (enthält Rating und Argumente)
+			//qAnswers = (List<QuestionAnswer>)Session["qAnswers"];
+			//QuestionAnswer myQ = qAnswers.ElementAt(q - 1 ?? 0);
+			//ViewBag.myQ = myQ;
+
+			//int pageSize = 1;
+			//int pageNumber = (q ?? 1);
+
+			//return View(qAnswers.ToPagedList(pageNumber, pageSize));
 		}
 
         public ActionResult DownloadFile()
@@ -142,5 +173,12 @@ namespace Prototyp.Controllers
 			ViewBag.Answers = answers;
             return View();
         }
+		public ActionResult Delete(int id)
+		{
+
+			DecisionProvider.GetDecisionProvider().Delete(id);
+			return RedirectToAction("Show");
+
+		}
 	}
 }
