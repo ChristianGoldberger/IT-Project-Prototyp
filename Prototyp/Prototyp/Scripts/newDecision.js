@@ -2,6 +2,16 @@
 {
 	$("#btnSave").click(saveDecision);	
 });
+function getWeight()
+{
+	var rates = document.getElementsByName('weight');
+	var rate_value;
+	for (var i = 0; i < rates.length; i++) {
+		if (rates[i].checked) {
+			rate_value = rates[i].value;
+		}
+	}
+}
 function saveDecision()
 {
 	var title = $("#title").val();
