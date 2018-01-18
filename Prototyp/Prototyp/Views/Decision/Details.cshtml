@@ -19,25 +19,26 @@
 		@*<table class="blueTable">*@
 		<thead>
 			<tr>
-				<th scope="col">Key</th>
-				<th scope="col">Bemerkungen</th>
-				<th scope="col">Tatsächliche Wertung</th>
+				<th scope="col">Frage</th>
+				<th scope="col">Wertung</th>
+				<th scope="col">Auswirkung</th>
 			</tr>
 		</thead>
 		<tbody>
 			@{
-				foreach (QuestionAnswer answer in ViewBag.Decisions.Answers)
+				foreach (var answer in ViewBag.Answers)
 				{
 					<tr>
-						<td>@answer.QuestionKey</td>
-						<td>@answer.Arguments</td>
+						<td>@answer.AnswerText</td>
 						<td>@answer.Rating</td>
+						<td>@answer.AnswerEffect</td>
+						@*<td>@answer.Effect</td>*@
 					</tr>
 				}
 			}
 		</tbody>
-
 	</table>
+	<button class="btn btn-primary" onclick="location.href='@Url.Action("Show", "Decision")';return false;">Zurück</button>
 </fieldset>
 
 @section scripts
