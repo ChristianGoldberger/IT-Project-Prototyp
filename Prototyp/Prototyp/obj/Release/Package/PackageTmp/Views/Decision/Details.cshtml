@@ -21,7 +21,7 @@
 			<tr>
 				<th scope="col">Frage</th>
 				<th scope="col">Wertung</th>
-				<th scope="col">Auswirkung</th>
+				<th scope="col">Anmerkung</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -29,9 +29,9 @@
 				foreach (var answer in ViewBag.Answers)
 				{
 					<tr>
-						<td>@answer.AnswerText</td>
+						<td>@answer.Text</td>
 						<td>@answer.Rating</td>
-						<td>@answer.AnswerEffect</td>
+						<td>@answer.Annotation</td>
 						@*<td>@answer.Effect</td>*@
 					</tr>
 				}
