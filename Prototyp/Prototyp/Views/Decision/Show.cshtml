@@ -10,63 +10,41 @@
     var host = System.Web.HttpContext.Current.Request.Url.Host;
 } 
 
-<head>
+@*<head>
     <link rel="stylesheet" type="text/css" href="~/Content/TableStyle.css">
-</head>
+</head>*@
 
 <fieldset style="margin-top: 10px">
     <legend>Entscheidungen</legend>
-    <table class="blueTable">
-        <tbody>
-            <tr>
-                <td>Id</td>
-                <td>Title</td>
-                <td>Description</td>
-                <td>ActualPerformance</td>
-                <td>Answers</td>
-                <td>DateTime</td>
-            </tr>
+	<table class="table table-striped table-hover">
+		@*<table class="blueTable">*@
+		<thead>
+			<tr>
+				<th scope="col">Titel</th>
+				<th scope="col">Beschreibung</th>
+			</tr>
+		</thead>
 
-            @{
-            foreach (Decision decision in ViewBag.Decisions)
-            {
-                <tr>
-                    <td>@decision.Id</td>
-                    <td>@decision.Title</td>
-                    <td>@decision.Description</td>
-                    <td>@decision.ActualPerformance</td>
-                    <td>
-                        <table class="blueTable">
+		<tbody>
+			@{
+			foreach (Decision decision in ViewBag.Decisions)
+			{
+				<tr>
+					<td>@decision.Title</td>
+					<td>@decision.Description</td>
+					@*<td>@decision.ActualPerformance</td>
+					<td>@decision.DecisionEntered</td>*@
+					<td><a class="btn btn-primary" style="float:right;margin-left:5px; margin-bottom:2px; height:40px;width:80px" href="@Url.Action("Details", new { controller = "Decision", id = decision.Id })">Details</a></td>
+				</tr>
+		}
 
-                            <tr>
-                                <td>Arguments</td>
-                                <td>Question Key</td>
-                                <td>Rating</td>
-                            </tr>
+			}
+		</tbody>
+	</table>
 
-                            @{
-                            foreach (QuestionAnswer answer in decision.Answers)
-                            {
-                                <tr>
-                                    <td>@answer.Arguments</td>
-                                    <td>@answer.QuestionKey</td>
-                                    <td>@answer.Rating</td>
-                                </tr>
-                        }
-                            }
-                        </table>
-                    </td>
-                    <td>@decision.DecisionEntered</td>
-                </tr>
-        }
+        <input type="button" class="btn btn-primary" value="Download XML File" onclick="location.href='@Url.Action("DownloadFile", "Decision")'" />
 
-            }
-        </tbody>
-    </table>
-
-    <input type="button" value="Download XML File" onclick="location.href='@Url.Action("DownloadFile", "Decision")'" />
-   
-    @*<a class="btn btn-primary" style="float:right;margin-left:5px; margin-bottom:2px; height:40px;width:80px" href="@Url.Action("Edit", new { controller = "Decision", id = q.Key })">Ändern</a>
+        @*<a class="btn btn-primary" style="float:right;margin-left:5px; margin-bottom:2px; height:40px;width:80px" href="@Url.Action("Edit", new { controller = "Decision", id = q.Key })">Ändern</a>
         <a class="btn btn-danger" style="float:right;height:40px;width:80px" href="@Url.Action("Delete", new { controller = "Decision", id = q.Key })">Löschen</a>*@
 </fieldset>
 

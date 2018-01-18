@@ -28,37 +28,44 @@ namespace Prototyp.Controllers
 			return View();
 		}
 
-		//public JsonResult SaveDecision(string title, string description)
-		//{
-		//	int check = 0; //0...Entscheidung erfolgreich gespeichert //1...Kein Titel eingefügt //2...Keine Beschreibung eingefügt //3...Titel und Beschreibung fehlen
-		//	string desc = description.Trim(' '); //manchmal wird " ssadasd" gespeichert, deshalb trim
-		//	if (title.Equals("") && desc.Equals(""))
-		//	{
-		//		return Json(3, JsonRequestBehavior.AllowGet);
-		//	}
-		//	if (title.Equals("")) return Json(1, JsonRequestBehavior.AllowGet);
-		//	if (desc.Equals("")) return Json(2, JsonRequestBehavior.AllowGet);
+		public JsonResult SaveDecision(string weight, string questionKey)
+		{
+			int check = 0; //0...Entscheidung erfolgreich gespeichert 
 
-		//	if (this.decision == null)
-		//	{
-		//		questions = QuestionProvider.GetQuestionProvider().GetQuestions();
-		//	}
-		//	else
-		//	{
-		//		questions = QuestionProvider.GetQuestionProvider().GetQuestions().Where(qq => this.decision.Answers.FirstOrDefault(dd => dd.QuestionKey == qq.Key) != null).ToList();
-		//	}
+			//ToDo: Frage speichern
 
-		//	//Question in QuestionAnswer wandeln
-		//	foreach (Question qqq in questions)
-		//	{
-		//		QuestionAnswer qa = new QuestionAnswer();
-		//		qa.QuestionKey = qqq.Text;
-		//		qAnswers.Add(qa);
-		//	}
-		//	Session["qAnswers"] = qAnswers;
 
-		//	return Json(check, JsonRequestBehavior.AllowGet);
-		//}
+
+
+
+			//string desc = description.Trim(' '); //manchmal wird " ssadasd" gespeichert, deshalb trim
+			//if (title.Equals("") && desc.Equals(""))
+			//{
+			//	return Json(3, JsonRequestBehavior.AllowGet);
+			//}
+			//if (title.Equals("")) return Json(1, JsonRequestBehavior.AllowGet);
+			//if (desc.Equals("")) return Json(2, JsonRequestBehavior.AllowGet);
+
+			//if (this.decision == null)
+			//{
+			//	questions = QuestionProvider.GetQuestionProvider().GetQuestions();
+			//}
+			//else
+			//{
+			//	questions = QuestionProvider.GetQuestionProvider().GetQuestions().Where(qq => this.decision.Answers.FirstOrDefault(dd => dd.QuestionKey == qq.Key) != null).ToList();
+			//}
+
+			////Question in QuestionAnswer wandeln
+			//foreach (Question qqq in questions)
+			//{
+			//	QuestionAnswer qa = new QuestionAnswer();
+			//	qa.QuestionKey = qqq.Text;
+			//	qAnswers.Add(qa);
+			//}
+			//Session["qAnswers"] = qAnswers;
+
+			return Json(check, JsonRequestBehavior.AllowGet);
+		}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult Index([Bind(Include = "Title,Description")] Decision d)
@@ -111,8 +118,6 @@ namespace Prototyp.Controllers
             return base.File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
 
-
-
 		public ActionResult Show()
 		{
             var decisions = DecisionProvider.GetDecisionProvider().GetAll();
@@ -120,5 +125,12 @@ namespace Prototyp.Controllers
 
 			return View();
 		}
+
+        public ActionResult Details(int id)
+        {
+            Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
+            ViewBag.Decisions = dec;
+            return View();
+        }
 	}
 }
