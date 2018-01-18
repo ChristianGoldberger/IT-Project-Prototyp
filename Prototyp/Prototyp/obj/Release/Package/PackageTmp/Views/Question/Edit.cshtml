@@ -77,7 +77,7 @@
 				<div class="row">
 					<div class="col-sm-5 col-lg-5">
 						<input type="submit" value="Speichern" class="btn btn-primary" />
-						<button id="btnBack" class="btn btn-primary">Zurück</button>
+						<button class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Question")';return false;">Zurück</button>
 					</div>
 				</div>
 			</fieldset>
@@ -199,7 +199,8 @@ else
 			<div class="row">
 				<div class="col-sm-5 col-lg-5">
 					<input type="submit" value="Speichern" class="btn btn-primary" />
-					<button id="btnBack" class="btn btn-primary">Zurück</button>
+					<button class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Question")';return false;">Zurück</button>
+					
 				</div>
 			</div>
 		</fieldset>
