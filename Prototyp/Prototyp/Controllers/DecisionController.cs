@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net;
 using System.IO;
 using System.Net.Http.Headers;
+using Prototyp.Helper;
 
 namespace Prototyp.Controllers
 {
@@ -22,6 +23,7 @@ namespace Prototyp.Controllers
 		string description;
 
 		Decision decision = null;
+		
 
 		public ActionResult Index()
 		{
@@ -129,7 +131,15 @@ namespace Prototyp.Controllers
         public ActionResult Details(int id)
         {
             Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
+			List<Answer> answers = new List<Answer>();
+			ViewBag.Questions = QuestionProvider.GetQuestionProvider().GetQuestions();
+			foreach (var s in dec.Answers)
+			{
+				Question q = QuestionProvider.GetQuestionProvider().GetQuestions().Single(x => (x.Key == s.QuestionKey));
+				answers.Add(new Answer { Rating = s.Rating, Text = q.Text, Annotation =  s.Arguments});
+			}
             ViewBag.Decisions = dec;
+			ViewBag.Answers = answers;
             return View();
         }
 	}
