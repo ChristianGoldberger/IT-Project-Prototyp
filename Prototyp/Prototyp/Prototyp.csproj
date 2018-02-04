@@ -238,7 +238,6 @@
     <Content Include="Views\Question\Edit.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Decision\Details.cshtml" />
-    <Content Include="Views\Decision\Show - Kopieren.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

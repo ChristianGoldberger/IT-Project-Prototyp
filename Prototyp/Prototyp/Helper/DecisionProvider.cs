@@ -40,6 +40,8 @@ namespace Helper {
             return provider;
         }
 
+        public void Reload() => provider = new DecisionProvider();
+
         public List<Decision> GetAll() {
             return decisions;
         }

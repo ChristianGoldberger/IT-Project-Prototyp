@@ -7,6 +7,7 @@ using PagedList;
 using System.Web.Mvc;
 using System.Windows;
 using Prototyp.Helper;
+using System.IO;
 
 namespace Prototyp.Controllers
 {
@@ -134,7 +135,7 @@ namespace Prototyp.Controllers
 
         public ActionResult Show()
         {
-
+            DecisionProvider.GetDecisionProvider().Reload();
             ViewBag.Decisions = DecisionProvider.GetDecisionProvider().GetAll();
           
             return View();
@@ -145,7 +146,27 @@ namespace Prototyp.Controllers
 			string fileName = "Decisions.xml";
 			return base.File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
 		}
-		public ActionResult Details(int id)
+
+        [HttpPost]
+        public ActionResult Upload()
+        {
+            if (Request.Files.Count > 0)
+            {
+                var file = Request.Files[0];
+
+                if (file != null && file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/"), fileName);
+                    file.SaveAs(path);
+                }
+            }
+
+            Show();
+            return View("Show");
+        }
+
+        public ActionResult Details(int id)
 		{
 			Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
 			List<Answer> answers = new List<Answer>();
