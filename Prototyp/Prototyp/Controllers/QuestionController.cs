@@ -30,6 +30,13 @@ namespace Prototyp.Controllers
 			return View(q);
 		}
 
+        public ActionResult Delete(string key){
+            QuestionProvider.GetQuestionProvider().deleteQuestion(key);
+
+            return RedirectToAction("Index");
+
+        }
+
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult Edit([Bind(Include = "Key,Text,Weight,Effect")] Question q)
@@ -42,4 +49,6 @@ namespace Prototyp.Controllers
 			return View(q);
 		}
 	}
+
+   
 }
