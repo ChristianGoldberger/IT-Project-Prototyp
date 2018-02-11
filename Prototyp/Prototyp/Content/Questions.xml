@@ -61,15 +61,9 @@
     <Effect>Negativ</Effect>
   </Question>
   <Question>
-    <Key>asdasdads</Key>
-    <Text>asdaaaaaaaada</Text>
-    <Weight>123</Weight>
-    <Effect>Positiv</Effect>
-  </Question>
-  <Question>
-    <Key>ASADSAD</Key>
-    <Text>ADAsdasdsad</Text>
-    <Weight>1231</Weight>
+    <Key>goverment</Key>
+    <Text>Hat die Entscheidung rechtliche Auswirkungen?</Text>
+    <Weight>5</Weight>
     <Effect>Positiv</Effect>
   </Question>
 </ArrayOfQuestion>
