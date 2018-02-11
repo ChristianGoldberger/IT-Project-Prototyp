@@ -187,14 +187,14 @@ namespace Prototyp.Controllers
 
         }
 
-        public ActionResult Safe(int id)
+       /* public ActionResult Safe(int id)
         {
             Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
            var checkBox =  
 
 
             //decision.ActualPerformance = Convert.ToInt32()
-        }
+        }*/
 
       
 

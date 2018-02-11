@@ -15,7 +15,7 @@ namespace Helper {
         [Required(ErrorMessage = "Bitte fügen Sie eine Beschreibung ein!")]
         public string Description { get; set; }
 
-        public int? ActualPerformance { get; set; }
+        public int ActualPerformance { get; set; }
 
         public List<QuestionAnswer> Answers { get; set; }
 

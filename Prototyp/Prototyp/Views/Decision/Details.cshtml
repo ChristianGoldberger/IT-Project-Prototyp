@@ -1,4 +1,4 @@
-﻿
+﻿@model  Helper.Decision
 @{
     ViewBag.Title = "Details";
 }
@@ -47,33 +47,52 @@
     <fieldset style="margin-top: 10px">
 
         Empfehlung: Dem Bauchgefühl kann vertraut werden!<br />
-        <label for="title" class="control-label">Tatsächliche Performance:</label>
+        <label for="actualPerformance" class="control-label">Tatsächliche Performance:</label>
 		<div class="form-group" id="titleForm" style="margin-left:0px;margin-right:0px">
 			<div class="row">
 				<div class="col-sm-1 col-lg-1">
 
 				</div>
-				<div class="col-sm-10 col-lg-10">
-					<div id="weight">
-						<input type="radio" checked id="performance1" name="Performance" value="1">
-						<label for="Radio1"> 1</label>
-						<input type="radio" id="performance2" name="Performance" value="2">
-						<label for="Radio2"> 2</label>
-						<input type="radio" id="performance3" name="Performance" value="3">
-						<label for="Radio3">3</label>
-						<input type="radio" id="performance4" name="Performance" value="4">
-						<label for="Radio4">4</label>
-						<input type="radio" id="performance5" name="Performance" value="5">
-						<label for="Radio5">5</label>
-						<input type="radio" id="performance6" name="Performance" value="6">
-						<label for="Radio">6</label>
-					</div>
+                <div class="col-sm-10 col-lg-10">
+                    <div class="radio">
+                        <label>
+                            @Html.RadioButtonFor(m => m.ActualPerformance, 1)
+                            1
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            @Html.RadioButtonFor(m => m.ActualPerformance, 2)
+                            2
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            @Html.RadioButtonFor(m => m.ActualPerformance, 3)
+                            3
+                        </label>
+                    </div>
+                    @*@<div id="weight">
+        <input type="radio" checked id="performance1" name="Performance" value="1">
+        <label for="Radio1"> 1</label>
+        <input type="radio" id="performance2" name="Performance" value="2">
+        <label for="Radio2"> 2</label>
+        <input type="radio" id="performance3" name="Performance" value="3">
+        <label for="Radio3">3</label>
+        <input type="radio" id="performance4" name="Performance" value="4">
+        <label for="Radio4">4</label>
+        <input type="radio" id="performance5" name="Performance" value="5">
+        <label for="Radio5">5</label>
+        <input type="radio" id="performance6" name="Performance" value="6">
+        <label for="Radio">6</label>
+                    *@
+                </div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-2 col-lg-2">
 					<button class="btn btn-primary" onclick="location.href='@Url.Action("Show", "Decision")';return false;">Zurück</button>
-					<button class="btn btn-primary" >Speichern</button>
+                    <input type="submit" value="Speichern" class="btn btn-primary" />
 				</div>
 			</div>
 			
@@ -85,5 +104,4 @@
 @section scripts
 {
     <script src="~/Scripts/decision.js" type="text/javascript"></script>
-    <script src="~/Scripts/decisionHandler.js" type="text/javascript"></script>
 }
