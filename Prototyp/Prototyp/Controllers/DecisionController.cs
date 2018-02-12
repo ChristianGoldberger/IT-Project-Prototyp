@@ -139,11 +139,6 @@ namespace Prototyp.Controllers
 			qAnswers = (List<QuestionAnswer>)Session["qAnswers"];
             QuestionAnswer myQ = qAnswers.ElementAt(q - 1 ?? 0);
 
-            //ToDo: Rating von den RadioButtons bekommen!?!?!?!?!?
-            //myQ.Rating = DecisionProvider.GetDecisionProvider().getRating();
-
-
-
             DecisionProvider.GetDecisionProvider().addQuestonAnswer(myQ);
             ViewBag.myQ = myQ;
 
@@ -166,12 +161,31 @@ namespace Prototyp.Controllers
             return base.File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
 
-		public ActionResult Show()
-		{
-            var decisions = DecisionProvider.GetDecisionProvider().GetAll();
-            ViewBag.Decisions = decisions;
+        [HttpPost]
+        public ActionResult Upload()
+        {
+            if (Request.Files.Count > 0)
+            {
+                var file = Request.Files[0];
 
-			return View();
+                if (file != null && file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/"), fileName);
+                    file.SaveAs(path);
+                }
+            }
+
+            Show();
+            return View("Show");
+        }
+
+        public ActionResult Show()
+		{
+            DecisionProvider.GetDecisionProvider().Reload();
+            ViewBag.Decisions = DecisionProvider.GetDecisionProvider().GetAll();
+
+            return View();
 		}
 
         public ActionResult Details(int id)
@@ -188,5 +202,15 @@ namespace Prototyp.Controllers
 			return RedirectToAction("Show");
 
 		}
-	}
+
+        /* public ActionResult Safe(int id)
+        {
+            Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
+           var checkBox =  
+
+
+            //decision.ActualPerformance = Convert.ToInt32()
+        }*/
+
+    }
 }

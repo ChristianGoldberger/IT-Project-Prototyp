@@ -1,15 +1,13 @@
 {
   "ExpandedNodes": [
-    "",
     "\\Prototyp",
     "\\Prototyp\\packages",
     "\\Prototyp\\Prototyp",
     "\\Prototyp\\Prototyp\\App_Start",
-    "\\Prototyp\\Prototyp\\Controllers",
-    "\\Prototyp\\Prototyp\\Views",
+    "\\Prototyp\\Prototyp\\Helper",
     "\\Prototyp\\Prototyp\\Views\\Decision",
-    "\\Prototyp\\Prototyp\\Views\\Home"
+    "\\Prototyp\\Prototyp\\Views\\Home",
+    "\\Prototyp\\Prototyp\\Views\\Question"
   ],
-  "SelectedNode": "\\Prototyp\\Prototyp\\Controllers\\DecisionController.cs",
   "PreviewInSolutionExplorer": false
 }

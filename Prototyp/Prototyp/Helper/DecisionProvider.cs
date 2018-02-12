@@ -41,8 +41,9 @@ namespace Helper
 				}
 			}
 		}
+        public void Reload() => provider = new DecisionProvider();
 
-		public static DecisionProvider GetDecisionProvider()
+        public static DecisionProvider GetDecisionProvider()
 		{
 			if (provider == null)
 			{
