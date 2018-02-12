@@ -14,104 +14,105 @@ using Prototyp.Helper;
 
 namespace Prototyp.Controllers
 {
-	public class DecisionController : Controller
-	{
-		//List<QuestionControl> qControls = new List<QuestionControl>();
-		List<QuestionAnswer> qAnswers = new List<QuestionAnswer>();
-		List<Question> questions;
+    public class DecisionController : Controller
+    {
+        //List<QuestionControl> qControls = new List<QuestionControl>();
+        List<QuestionAnswer> qAnswers = new List<QuestionAnswer>();
+        List<Question> questions;
 
-		//string title;
-		//string description;
+        //string title;
+        //string description;
 
-		Decision decision = null;
-		
-
-		public ActionResult Index()
-		{
-			return View();
-		}
-
-    
-		public JsonResult SaveDecision(string weight, string questionKey)
-		{
-			int check = 0; //0...Entscheidung erfolgreich gespeichert 
-
-			//ToDo: Frage speichern
+        Decision decision = null;
 
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+
+        public JsonResult SaveDecision(string weight, string questionKey)
+        {
+            int check = 0; //0...Entscheidung erfolgreich gespeichert 
+
+            //ToDo: Frage speichern
 
 
 
-			//string desc = description.Trim(' '); //manchmal wird " ssadasd" gespeichert, deshalb trim
-			//if (title.Equals("") && desc.Equals(""))
-			//{
-			//	return Json(3, JsonRequestBehavior.AllowGet);
-			//}
-			//if (title.Equals("")) return Json(1, JsonRequestBehavior.AllowGet);
-			//if (desc.Equals("")) return Json(2, JsonRequestBehavior.AllowGet);
 
-			//if (this.decision == null)
-			//{
-			//	questions = QuestionProvider.GetQuestionProvider().GetQuestions();
-			//}
-			//else
-			//{
-			//	questions = QuestionProvider.GetQuestionProvider().GetQuestions().Where(qq => this.decision.Answers.FirstOrDefault(dd => dd.QuestionKey == qq.Key) != null).ToList();
-			//}
 
-			////Question in QuestionAnswer wandeln
-			//foreach (Question qqq in questions)
-			//{
-			//	QuestionAnswer qa = new QuestionAnswer();
-			//	qa.QuestionKey = qqq.Text;
-			//	qAnswers.Add(qa);
-			//}
-			//Session["qAnswers"] = qAnswers;
+            //string desc = description.Trim(' '); //manchmal wird " ssadasd" gespeichert, deshalb trim
+            //if (title.Equals("") && desc.Equals(""))
+            //{
+            //	return Json(3, JsonRequestBehavior.AllowGet);
+            //}
+            //if (title.Equals("")) return Json(1, JsonRequestBehavior.AllowGet);
+            //if (desc.Equals("")) return Json(2, JsonRequestBehavior.AllowGet);
 
-			return Json(check, JsonRequestBehavior.AllowGet);
-		}
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Index([Bind(Include = "Title,Description")] Decision d)
-		{
-			if (ModelState.IsValid)
-			{
-			
+            //if (this.decision == null)
+            //{
+            //	questions = QuestionProvider.GetQuestionProvider().GetQuestions();
+            //}
+            //else
+            //{
+            //	questions = QuestionProvider.GetQuestionProvider().GetQuestions().Where(qq => this.decision.Answers.FirstOrDefault(dd => dd.QuestionKey == qq.Key) != null).ToList();
+            //}
+
+            ////Question in QuestionAnswer wandeln
+            //foreach (Question qqq in questions)
+            //{
+            //	QuestionAnswer qa = new QuestionAnswer();
+            //	qa.QuestionKey = qqq.Text;
+            //	qAnswers.Add(qa);
+            //}
+            //Session["qAnswers"] = qAnswers;
+
+            return Json(check, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index([Bind(Include = "Title,Description")] Decision d)
+        {
+            if (ModelState.IsValid)
+            {
+
                 DecisionProvider.GetDecisionProvider().setTitel(d.Title);
                 DecisionProvider.GetDecisionProvider().setDescription(d.Description);
 
-				if (this.decision == null)
-				{
-					questions = QuestionProvider.GetQuestionProvider().GetQuestions();
-				}
-				else
-				{
-					questions = QuestionProvider.GetQuestionProvider().GetQuestions().Where(qq => this.decision.Answers.FirstOrDefault(dd => dd.QuestionKey == qq.Key) != null).ToList();
-				}
+                if (this.decision == null)
+                {
+                    questions = QuestionProvider.GetQuestionProvider().GetQuestions();
+                }
+                else
+                {
+                    questions = QuestionProvider.GetQuestionProvider().GetQuestions().Where(qq => this.decision.Answers.FirstOrDefault(dd => dd.QuestionKey == qq.Key) != null).ToList();
+                }
 
-				//Question in QuestionAnswer wandeln
-				foreach (Question qqq in questions)
-				{
-					QuestionAnswer qa = new QuestionAnswer();
-					qa.QuestionKey = qqq.Text;
-					qAnswers.Add(qa);
-				}
-				Session["qAnswers"] = qAnswers;
+                //Question in QuestionAnswer wandeln
+                foreach (Question qqq in questions)
+                {
+                    QuestionAnswer qa = new QuestionAnswer();
+                    qa.QuestionKey = qqq.Text;
+                    qAnswers.Add(qa);
+                }
+                Session["qAnswers"] = qAnswers;
 
                 return RedirectToAction("New", new
                 {
                     q = 1
 
                 });
-			}
-			return View();
-		}
+            }
+            return View();
+        }
 
-        public ActionResult CheckRadio(FormCollection frm){
+        public ActionResult CheckRadio(FormCollection frm)
+        {
 
             DecisionProvider.GetDecisionProvider().addRatingtoList(int.Parse(frm["Entscheidung"].ToString()));
             DecisionProvider.GetDecisionProvider().addArgumetnToList(frm["TextFeldArgument"].ToString());
-           
+
 
             return RedirectToAction("New", new
             {
@@ -120,46 +121,52 @@ namespace Prototyp.Controllers
             });
         }
 
-       
-      
+
+
         public ActionResult New(int? q)
-		{
-			int pageNumber;
-			int pageSize;
+        {
+            int pageNumber;
+            int pageSize;
 
             if (q.HasValue && q > QuestionProvider.GetQuestionProvider().GetQuestions().Count)
-			{
+            {
 
                 DecisionProvider.GetDecisionProvider().setQuestion(1);
                 DecisionProvider.GetDecisionProvider().clearQuestionAnswer();
-				return RedirectToAction("Show");
-			}
+                return RedirectToAction("Show");
+            }
 
-			//Ab hier weiter mit QuestionAnswer arbeiten (enthält Rating und Argumente)
-			qAnswers = (List<QuestionAnswer>)Session["qAnswers"];
+            //Ab hier weiter mit QuestionAnswer arbeiten (enthält Rating und Argumente)
+            qAnswers = (List<QuestionAnswer>)Session["qAnswers"];
             QuestionAnswer myQ = qAnswers.ElementAt(q - 1 ?? 0);
+
+            //ToDo: Rating von den RadioButtons bekommen!?!?!?!?!?
+            //myQ.Rating = DecisionProvider.GetDecisionProvider().getRating();
+
+
 
             DecisionProvider.GetDecisionProvider().addQuestonAnswer(myQ);
             ViewBag.myQ = myQ;
 
 
 
-			pageSize = 1;
-			pageNumber = (q ?? 1);
-           
+            pageSize = 1;
+            pageNumber = (q ?? 1);
+
             DecisionProvider.GetDecisionProvider().riseQuestion();
 
-			return View(qAnswers.ToPagedList(pageNumber, pageSize));
+            return View(qAnswers.ToPagedList(pageNumber, pageSize));
 
-			
-		}
-     
-        public ActionResult DownloadFile()
-        {
-            byte[] fileBytes = System.IO.File.ReadAllBytes(Server.MapPath("~") + "Content/Decisions.xml");
-            string fileName = "Decisions.xml";
-            return base.File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+
         }
+        /* public ActionResult Safe(int id)
+        {
+            Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
+           var checkBox =  
+
+
+            //decision.ActualPerformance = Convert.ToInt32()
+        }*/
 
         [HttpPost]
         public ActionResult Upload()
@@ -179,14 +186,20 @@ namespace Prototyp.Controllers
             Show();
             return View("Show");
         }
+        public ActionResult DownloadFile()
+        {
+            byte[] fileBytes = System.IO.File.ReadAllBytes(Server.MapPath("~") + "Content/Decisions.xml");
+            string fileName = "Decisions.xml";
+            return base.File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
 
         public ActionResult Show()
-		{
-            DecisionProvider.GetDecisionProvider().Reload();
-            ViewBag.Decisions = DecisionProvider.GetDecisionProvider().GetAll();
+        {
+            var decisions = DecisionProvider.GetDecisionProvider().GetAll();
+            ViewBag.Decisions = decisions;
 
             return View();
-		}
+        }
 
         public ActionResult Details(int id)
         {
@@ -195,22 +208,14 @@ namespace Prototyp.Controllers
             return View();
         }
 
-		public ActionResult Delete(int id)
-		{
-
-			DecisionProvider.GetDecisionProvider().Delete(id);
-			return RedirectToAction("Show");
-
-		}
-
-        /* public ActionResult Safe(int id)
+        public ActionResult Delete(int id)
         {
-            Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
-           var checkBox =  
 
+            DecisionProvider.GetDecisionProvider().Delete(id);
+            return RedirectToAction("Show");
 
-            //decision.ActualPerformance = Convert.ToInt32()
-        }*/
-
+        }
     }
+
+
 }
