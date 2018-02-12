@@ -4,7 +4,7 @@
     <Id>2</Id>
     <Title>asdasd</Title>
     <Description>asdasd</Description>
-    <ActualPerformance>1</ActualPerformance>
+    <ActualPerformance>3</ActualPerformance>
     <Answers />
     <DecisionEntered>0001-01-01T00:00:00</DecisionEntered>
   </Decision>
@@ -12,7 +12,7 @@
     <Id>3</Id>
     <Title>s</Title>
     <Description>s</Description>
-    <ActualPerformance>0</ActualPerformance>
+    <ActualPerformance>3</ActualPerformance>
     <Answers>
       <QuestionAnswer>
         <QuestionKey>Wie hoch ist das Risiko?</QuestionKey>
@@ -219,6 +219,282 @@
       <QuestionAnswer>
         <QuestionKey>Wie hoch ist das Risiko?</QuestionKey>
         <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Muss die Entscheidung schnell getroffen werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist die Entscheidung mit Emotionen behaftet?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>War das Bauchgefühl bereits bei ähnlichen Entscheidungen erfolgreich?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Sind alle benötigten Informationen zur Entscheidungsfindung verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Können auch alle Informationen berücksichtigt werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Könnten die Informationen unausgewogen/tendenziös sein?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Wird erwartet, dass zusätzliche Informationen wenig Mehrwert liefern?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Gibt es rechtliche Einschränkungen bei der Entscheidungsfindung?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist eine Standardoption verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Hat die Entscheidung rechtliche Auswirkungen?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Frage</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+    </Answers>
+    <DecisionEntered>0001-01-01T00:00:00</DecisionEntered>
+  </Decision>
+  <Decision>
+    <Id>7</Id>
+    <Title>Test EG</Title>
+    <Description>test</Description>
+    <ActualPerformance>0</ActualPerformance>
+    <Answers>
+      <QuestionAnswer>
+        <QuestionKey>Wie hoch ist das Risiko?</QuestionKey>
+        <Rating>3</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Muss die Entscheidung schnell getroffen werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist die Entscheidung mit Emotionen behaftet?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>War das Bauchgefühl bereits bei ähnlichen Entscheidungen erfolgreich?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Sind alle benötigten Informationen zur Entscheidungsfindung verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Können auch alle Informationen berücksichtigt werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Könnten die Informationen unausgewogen/tendenziös sein?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Wird erwartet, dass zusätzliche Informationen wenig Mehrwert liefern?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Gibt es rechtliche Einschränkungen bei der Entscheidungsfindung?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist eine Standardoption verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Hat die Entscheidung rechtliche Auswirkungen?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Frage</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+    </Answers>
+    <DecisionEntered>0001-01-01T00:00:00</DecisionEntered>
+  </Decision>
+  <Decision>
+    <Id>8</Id>
+    <Title>testEg2</Title>
+    <Description>test</Description>
+    <ActualPerformance>0</ActualPerformance>
+    <Answers>
+      <QuestionAnswer>
+        <QuestionKey>Wie hoch ist das Risiko?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Muss die Entscheidung schnell getroffen werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist die Entscheidung mit Emotionen behaftet?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>War das Bauchgefühl bereits bei ähnlichen Entscheidungen erfolgreich?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Sind alle benötigten Informationen zur Entscheidungsfindung verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Können auch alle Informationen berücksichtigt werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Könnten die Informationen unausgewogen/tendenziös sein?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Wird erwartet, dass zusätzliche Informationen wenig Mehrwert liefern?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Gibt es rechtliche Einschränkungen bei der Entscheidungsfindung?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist eine Standardoption verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Hat die Entscheidung rechtliche Auswirkungen?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Frage</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+    </Answers>
+    <DecisionEntered>0001-01-01T00:00:00</DecisionEntered>
+  </Decision>
+  <Decision>
+    <Id>9</Id>
+    <Title>loo</Title>
+    <Description>kjh</Description>
+    <ActualPerformance>0</ActualPerformance>
+    <Answers>
+      <QuestionAnswer>
+        <QuestionKey>Wie hoch ist das Risiko?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Muss die Entscheidung schnell getroffen werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist die Entscheidung mit Emotionen behaftet?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>War das Bauchgefühl bereits bei ähnlichen Entscheidungen erfolgreich?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Sind alle benötigten Informationen zur Entscheidungsfindung verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Können auch alle Informationen berücksichtigt werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Könnten die Informationen unausgewogen/tendenziös sein?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Wird erwartet, dass zusätzliche Informationen wenig Mehrwert liefern?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Gibt es rechtliche Einschränkungen bei der Entscheidungsfindung?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist eine Standardoption verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Hat die Entscheidung rechtliche Auswirkungen?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Frage</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+    </Answers>
+    <DecisionEntered>0001-01-01T00:00:00</DecisionEntered>
+  </Decision>
+  <Decision>
+    <Id>10</Id>
+    <Title>fdafaf</Title>
+    <Description>afdafdasf</Description>
+    <ActualPerformance>0</ActualPerformance>
+    <Answers>
+      <QuestionAnswer>
+        <QuestionKey>Wie hoch ist das Risiko?</QuestionKey>
+        <Rating>4</Rating>
         <Arguments />
       </QuestionAnswer>
       <QuestionAnswer>

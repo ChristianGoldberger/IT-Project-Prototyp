@@ -121,6 +121,14 @@ namespace Prototyp.Controllers
             });
         }
 
+        public ActionResult CheckRadioActualPerformance(FormCollection frm)
+        {
+            DecisionProvider.GetDecisionProvider().addRatingtoList(int.Parse(frm["ActualPerformance"].ToString()));
+
+
+            return RedirectToAction("Details");
+        }
+
 
 
         public ActionResult New(int? q)
@@ -205,6 +213,7 @@ namespace Prototyp.Controllers
         {
             Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
             ViewBag.QuestionAnswer = dec.Answers;
+           
             return View();
         }
 
