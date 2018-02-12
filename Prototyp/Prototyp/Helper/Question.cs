@@ -15,7 +15,6 @@ namespace Helper {
 
         [Required]
         public IntuitionEffect Effect { get; set; }
-
         public Question() { }
     }
 }

@@ -65,7 +65,19 @@ namespace Helper
             }
         }
         */
+        public void deleteQuestion(string key){
 
+            for (int i = 0; i < this.questions.Count;i++){
+                if (this.questions.ElementAt(i).Key.Equals(key)){
+                    this.questions.RemoveAt(i);
+                }
+            }
+            if (File.Exists(Q_PATH))
+            {
+                File.Delete(Q_PATH);
+                File.WriteAllText(Q_PATH, ToXML(this.questions));
+            }
+        }
         public void Save(Question quesion)
         {
             //questions.Remove(questions.FirstOrDefault(d => d.Key == quesion.Key));

@@ -1,75 +1,72 @@
-﻿@model Helper.Decision
-
+﻿﻿@model Helper.Decision
 @{
-	ViewBag.Title = "Neue Entscheidung";
+    ViewBag.Title = "Neue Entscheidung";
 }
-
 @using (Html.BeginForm())
 {
-	@Html.AntiForgeryToken()
-	<form class="form-horizontal">
-		<fieldset style="margin-top: 10px">
-			<legend>Neue Entscheidung erstellen</legend>
-			<div class="form-group" id="titleForm" style="margin-left:0px;margin-right:0px">
-				<div class="row">
-					<div class="col-sm-2 col-lg-2">
-						<label for="title" class="control-label">Titel</label>
-					</div>
-					<div class="col-sm-10 col-lg-10">
-						@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.Title)
-					</div>
-				</div>
-			</div>
-			<div class="form-group" id="descriptionForm" style="margin-left:0px;margin-right:0px">
-				<div class="row">
-					<div class="col-sm-2 col-lg-2">
-						<label for="description" class="control-label">Beschreibung</label>
-					</div>
-					<div class="col-sm-10 col-lg-10">
-						@Html.TextAreaFor(model => model.Description, new { @rows = "3", @class = "form-control" })
-						@Html.ValidationMessageFor(model => model.Description)
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-5 col-lg-5">
-					<input type="submit" value="Speichern" class="btn btn-primary" />
-				</div>
-			</div>
-		</fieldset>
-	</form>
-
-
-	@*<div class="form-horizontal">
-		<hr />
-		@Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    <form class="form-horizontal">
+        <fieldset style="margin-top: 10px">
+            <legend>Neue Entscheidung erstellen</legend>
+            <div class="form-group" id="titleForm" style="margin-left:0px;margin-right:0px">
+                <div class="row">
+                    <div class="col-sm-2 col-lg-2">
+                        <label for="title" class="control-label">Titel</label>
+                    </div>
+                    <div class="col-sm-10 col-lg-10">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="descriptionForm" style="margin-left:0px;margin-right:0px">
+                <div class="row">
+                    <div class="col-sm-2 col-lg-2">
+                        <label for="description" class="control-label">Beschreibung</label>
+                    </div>
+                    <div class="col-sm-10 col-lg-10">
+                        @Html.TextAreaFor(model => model.Description, new { @rows = "3", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Description)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-lg-5">
+                    <input type="submit" value="Speichern" class="btn btn-primary" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
 
 
-		<div class="form-group">
-			@Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @placeholder = "fill in", @style = "width: 900px;max-width: 900px;" } })
-				@Html.ValidationMessageFor(model => model.Title)
-			</div>
-		</div>
-		<div class="form-group">
-			@Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = "fill in", @style = "width: 900px;max-width: 1800px;" } })
-				@Html.ValidationMessageFor(model => model.Description)
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-md-offset-2 col-md-10">
-				<input type="submit" value="Save" class="btn btn-default" />
-			</div>
-		</div>
-	</div>*@
+    @*<div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true)
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @placeholder = "fill in", @style = "width: 900px;max-width: 900px;" } })
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = "fill in", @style = "width: 900px;max-width: 1800px;" } })
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>*@
 
 }
 @section scripts
 {
-	<script src="~/Scripts/newDecision.js" type="text/javascript"></script>
+    <script src="~/Scripts/newDecision.js" type="text/javascript"></script>
 }
