@@ -217,9 +217,11 @@ namespace Prototyp.Controllers
 			int id = int.Parse(Session["ID"].ToString());
 			int actualPerformance = int.Parse(frm["Entscheidung"].ToString());
 			//Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
-			//Decision decision = DecisionProvider.GetDecisionProvider().GetAll().Single(s => (s.Id == id));
-
-			return View(decision);
+			Decision decision = DecisionProvider.GetDecisionProvider().GetAll().Single(s => (s.Id == id));
+            decision.ActualPerformance = actualPerformance;
+            DecisionProvider.GetDecisionProvider().Save(decision);
+            Show();
+			return View("Show");
         }
 
         public ActionResult Delete(int id)
