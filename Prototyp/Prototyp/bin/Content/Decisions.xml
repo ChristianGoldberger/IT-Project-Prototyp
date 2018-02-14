@@ -4,7 +4,7 @@
     <Id>0</Id>
     <Title>test</Title>
     <Description>test</Description>
-    <ActualPerformance>3</ActualPerformance>
+    <ActualPerformance>1</ActualPerformance>
     <Answers>
       <QuestionAnswer>
         <QuestionKey>Wie hoch ist das Risiko?</QuestionKey>
@@ -73,7 +73,7 @@
     <Id>1</Id>
     <Title>Test2</Title>
     <Description>Beschreibung</Description>
-    <ActualPerformance>0</ActualPerformance>
+    <ActualPerformance>2</ActualPerformance>
     <Answers>
       <QuestionAnswer>
         <QuestionKey>Wie hoch ist das Risiko?</QuestionKey>

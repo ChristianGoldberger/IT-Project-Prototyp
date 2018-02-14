@@ -209,6 +209,9 @@ namespace Prototyp.Controllers
             Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
 			Session["ID"] = id;
             ViewBag.QuestionAnswer = dec.Answers;
+            ViewBag.Decision = dec;
+           
+
             return View();
         }
 
@@ -220,6 +223,7 @@ namespace Prototyp.Controllers
 			Decision decision = DecisionProvider.GetDecisionProvider().GetAll().Single(s => (s.Id == id));
             decision.ActualPerformance = actualPerformance;
             DecisionProvider.GetDecisionProvider().Save(decision);
+            
             Show();
 			return View("Show");
         }
