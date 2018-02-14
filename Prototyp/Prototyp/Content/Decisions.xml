@@ -69,4 +69,73 @@
     </Answers>
     <DecisionEntered>2018-02-14T10:04:35.2614632+01:00</DecisionEntered>
   </Decision>
+  <Decision>
+    <Id>1</Id>
+    <Title>Test2</Title>
+    <Description>Beschreibung</Description>
+    <ActualPerformance>0</ActualPerformance>
+    <Answers>
+      <QuestionAnswer>
+        <QuestionKey>Wie hoch ist das Risiko?</QuestionKey>
+        <Rating>5</Rating>
+        <Arguments>hjklh</Arguments>
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Muss die Entscheidung schnell getroffen werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist die Entscheidung mit Emotionen behaftet?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>War das Bauchgefühl bereits bei ähnlichen Entscheidungen erfolgreich?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Sind alle benötigten Informationen zur Entscheidungsfindung verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Können auch alle Informationen berücksichtigt werden?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Könnten die Informationen unausgewogen/tendenziös sein?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Wird erwartet, dass zusätzliche Informationen wenig Mehrwert liefern?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Gibt es rechtliche Einschränkungen bei der Entscheidungsfindung?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Ist eine Standardoption verfügbar?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Hat die Entscheidung rechtliche Auswirkungen?</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+      <QuestionAnswer>
+        <QuestionKey>Frage</QuestionKey>
+        <Rating>1</Rating>
+        <Arguments />
+      </QuestionAnswer>
+    </Answers>
+    <DecisionEntered>2018-02-14T21:10:33.4746354+01:00</DecisionEntered>
+  </Decision>
 </ArrayOfDecision>
