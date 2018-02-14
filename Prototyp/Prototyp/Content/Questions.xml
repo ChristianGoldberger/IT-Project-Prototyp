@@ -66,10 +66,4 @@
     <Weight>5</Weight>
     <Effect>Positiv</Effect>
   </Question>
-  <Question>
-    <Key>Testfrage</Key>
-    <Text>Frage</Text>
-    <Weight>1</Weight>
-    <Effect>Positiv</Effect>
-  </Question>
 </ArrayOfQuestion>
