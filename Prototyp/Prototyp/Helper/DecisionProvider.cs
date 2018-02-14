@@ -105,6 +105,7 @@ namespace Helper
         }
         public void clearQuestionAnswer(){
             Decision decision = new Decision();
+            decision.DecisionEntered = DateTime.Now;
             decision.Title = this.titel;
             decision.Description = this.description;
             for (int i = 0; i < this.questionAnswer.Count; i++){
