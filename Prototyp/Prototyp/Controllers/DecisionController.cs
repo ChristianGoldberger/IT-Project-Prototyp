@@ -205,21 +205,21 @@ namespace Prototyp.Controllers
 
         public ActionResult Details(int id)
         {
+			int i = 0;
             Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
-          
+			Session["ID"] = id;
             ViewBag.QuestionAnswer = dec.Answers;
-            
-           
             return View();
         }
 
-        public ActionResult DetailsPerformed(int id)
+        public ActionResult DetailsPerformed(FormCollection frm)
         {
-           
-            //Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
-            Decision decision = DecisionProvider.GetDecisionProvider().GetAll().Single(s => (s.Id == id));
-            
-            return View(decision);
+			int id = int.Parse(Session["ID"].ToString());
+			int actualPerformance = int.Parse(frm["Entscheidung"].ToString());
+			//Decision dec = DecisionProvider.GetDecisionProvider().GetAll().FirstOrDefault(d => d.Id == id);
+			//Decision decision = DecisionProvider.GetDecisionProvider().GetAll().Single(s => (s.Id == id));
+
+			return View(decision);
         }
 
         public ActionResult Delete(int id)

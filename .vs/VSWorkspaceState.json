@@ -1,13 +1,11 @@
 {
   "ExpandedNodes": [
+    "",
     "\\Prototyp",
     "\\Prototyp\\packages",
     "\\Prototyp\\Prototyp",
     "\\Prototyp\\Prototyp\\App_Start",
-    "\\Prototyp\\Prototyp\\Helper",
-    "\\Prototyp\\Prototyp\\Views\\Decision",
-    "\\Prototyp\\Prototyp\\Views\\Home",
-    "\\Prototyp\\Prototyp\\Views\\Question"
+    "\\Prototyp\\Prototyp\\Helper"
   ],
   "PreviewInSolutionExplorer": false
 }
