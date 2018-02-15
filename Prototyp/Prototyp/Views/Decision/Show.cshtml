@@ -17,9 +17,10 @@
             <tr>
                 <th scope="col">Titel</th>
                 <th scope="col">Beschreibung</th>
-                <th scope="col">Actual Performance</th>
+                <!-- <th scope="col">Actual Performance</th>
+                -->
                 <th scope="col">Datum</th>
-				<th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -29,8 +30,9 @@
                     <tr>
                         <td>@decision.Title</td>
                         <td>@decision.Description</td>
-                        <td>@decision.ActualPerformance</td>
-                            <td>@decision.DecisionEntered</td>
+                        <!--<td>@@decision.ActualPerformance</td>
+                        -->
+                        <td>@decision.DecisionEntered</td>
                         <td><a class="btn btn-primary btn-sm" href="@Url.Action("Details", new { controller = "Decision", id = decision.Id})">Details</a></td>
                     </tr>
                 }
