@@ -40,18 +40,22 @@
         </tbody>
     </table>
 
-    <button class="btn btn-primary" onclick="location.href='@Url.Action("Show", "Decision")';return false;">Zurück</button>
 </fieldset>
 
 @using (Html.BeginForm("DetailsPerformed", "Decision", FormMethod.Post, new { id = ViewBag.ID }))
 {
-   
-
+    RatingInterpreter ri = new RatingInterpreter();
+    RatingCalculator rc = new RatingCalculator();
+    double rating = rc.GetRating(ViewBag.QuestionAnswer);
+    string result = ri.GetResult(rating);
+    if (ViewBag.ActualPerformance == 0)
+    {
         <form class="form-horizontal">
             <fieldset style="margin-top: 10px">
-                Empfehlung: Dem Bauchgefühl kann vertraut werden!<br />
+                @result [Rating=@rating.ToString()]
+                <!-- Empfehlung: Dem Bauchgefühl kann vertraut werden!--><br />
 
-                <label for="headerline" class="control-label">Tatsächliche Performance:</label>
+                <label for="headerline" class="control-label">Tatsächliche Performance:  </label>
 
                 <div class="form-group" id="actualPerformance" style="margin-left:0px;margin-right:0px">
                     <div class="row">
@@ -61,7 +65,7 @@
                         <div class="col-sm-10 col-lg-10">
                             <div id="weight" runat="server" ClientIDMode="Static">
 
-                                <input type="radio" checked id="decision1" name="Entscheidung" value="1" runat="server" ClientIDMode="Static">
+                                <input type="radio" id="decision1" name="Entscheidung" value="1" runat="server" ClientIDMode="Static">
                                 <label for="Radio1"> 1</label>
                                 <input type="radio" id="decision2" name="Entscheidung" value="2" runat="server" ClientIDMode="Static">
                                 <label for="Radio2"> 2</label>
@@ -78,6 +82,7 @@
                     </div>
                 </div>
 
+
                 <div class="row">
                     <div class="col-sm-2 col-lg-2">
                         <button class="btn btn-primary" onclick="location.href='@Url.Action("Show", "Decision")';return false;">Zurück</button>
@@ -87,84 +92,38 @@
                 </div>
             </fieldset>
         </form>
-    
+
+    }
+    else
+
+    {
+
+        <form class="form-horizontal">
+            <fieldset style="margin-top: 10px">
+                @result [Rating=@rating.ToString()]
+                <!-- Empfehlung: Dem Bauchgefühl kann vertraut werden!--><br />
+
+                <label for="headerline" class="control-label">Tatsächliche Performance: @ViewBag.ActualPerformance</label>
+
+
+
+                <div class="row">
+                    <div class="col-sm-2 col-lg-2">
+                        <button class="btn btn-primary" onclick="location.href='@Url.Action("Show", "Decision")';return false;">Zurück</button>
+                        @*<button class="btn btn-primary" onclick="location.href='@Url.Action("DetailsPerformed", new { controller = "Decision", id = ViewBag.ID })';return false;">Speichern</button>*@
+
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+
+
+    }
+
 
 }
-@*@using (Html.BeginForm("DetailsPerformed", "Decision", FormMethod.Post, new {id = ViewBag.ID }))
-        {
-
-            <form class="form-horizontal">
-                <fieldset style="margin-top: 10px">
-                    Empfehlung: Dem Bauchgefühl kann vertraut werden!<br />
-
-                    <label for="headerline" class="control-label">Tatsächliche Performance:</label>
-
-                    <div class="form-group" id="actualPerformance" style="margin-left:0px;margin-right:0px">
-                        <div class="row">
-                            <div class="col-sm-2 col-lg-2">
-                                <label for="actualPerformance" class="control-label">ActualPerformance</label>
-                            </div>
-
-                            <div class="col-sm-10 col-lg-10">
-                                @Html.TextAreaFor(model => model.ActualPerformance, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.ActualPerformance)
-
-
-                            </div>
-                            <div class="col-sm-10 col-lg-10">
-                                <div class="radio">
-                                    <label>
-                                        @Html.RadioButtonFor(m => m.ActualPerformance, 1)
-                                       1
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        @Html.RadioButtonFor(m => m.ActualPerformance, 2)
-                                        2
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        @Html.RadioButtonFor(m => m.ActualPerformance, 3)
-                                        3
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        @Html.RadioButtonFor(m => m.ActualPerformance, 4)
-                                        4
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        @Html.RadioButtonFor(m => m.ActualPerformance, 5)
-                                        5
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        @Html.RadioButtonFor(m => m.ActualPerformance, 6)
-                                        6
-                                    </label>
-                                </div>
-                                @Html.ValidationMessageFor(model => model.ActualPerformance)
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-2 col-lg-2">
-                            <button class="btn btn-primary" onclick="location.href='@Url.Action("Show", "Decision")';return false;">Zurück</button>
-                            <input type="submit" value="Speichern" class="btn btn-primary" />
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-
-
-    }*@
 
 
 @section scripts

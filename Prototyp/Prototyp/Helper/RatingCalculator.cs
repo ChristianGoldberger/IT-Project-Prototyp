@@ -8,7 +8,7 @@ namespace Helper {
             var questions = QuestionProvider.GetQuestionProvider().GetQuestions();
 
             foreach (var answer in answers) {
-                var question = questions.FirstOrDefault(q => q.Key == answer.QuestionKey);
+                var question = questions.FirstOrDefault(q => q.Text == answer.QuestionKey);
                 if (question != null) {
                     if (question.Effect == IntuitionEffect.Positiv) {
                         rating += answer.Rating * question.Weight;
@@ -20,7 +20,7 @@ namespace Helper {
             }
 
             double baseValue = 0;
-            foreach (var question in questions.Where(q => q.Effect != IntuitionEffect.Neutral && answers.FirstOrDefault(a => a.QuestionKey == q.Key) != null)) {
+            foreach (var question in questions.Where(q => q.Effect != IntuitionEffect.Neutral && answers.FirstOrDefault(a => a.QuestionKey == q.Text) != null)) {
                 baseValue += (1 * question.Weight);
             }
 
