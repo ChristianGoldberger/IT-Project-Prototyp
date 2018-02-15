@@ -210,7 +210,12 @@ namespace Prototyp.Controllers
 			Session["ID"] = id;
             ViewBag.QuestionAnswer = dec.Answers;
             ViewBag.Decision = dec;
-           
+            ViewBag.ActualPerformance = dec.ActualPerformance;
+
+            RatingInterpreter ri = new RatingInterpreter();
+            RatingCalculator rc = new RatingCalculator();
+            double rating = rc.GetRating(dec.Answers);
+            string result = ri.GetResult(rating);
 
             return View();
         }
